@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-4  Dymanite webtech</title>
+</head>
+<body>
+    <div class="typewriter">
+        <span class="text"></span>
+        <span class="cursor"></span>
+    </div>
+       
+</body>
+<style>
+    .typewriter {
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.text {
+  color: #000;
+}
+
+.cursor {
+  border-right: 2px solid #000;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+</style>
+<script>
+    const textElement = document.querySelector('.text');
+    const text = ' "Dynamite WebTech  Task-4" Hello, World! This is a typewriter effect.';
+
+let index = 0;
+const speed = 50; // adjust speed as needed
+
+function typeWriter() {
+  if (index < text.length) {
+    textElement.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+typeWriter();
+
+</script>
+</html>
